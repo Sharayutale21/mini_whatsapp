@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>edit route</title>
+</head>
+<body>
+	<p>Edit your chat <%= chat._id %></p>
+	<p>This chat was sent from <b><%=chat.from%></b> to <b><%=chat.to%></b></p>
+	<!--here we are using method override to change the method from POST to PUT-->
+	<form method="POST" action="/chats/<%=chat._id%>?_method=PUT"> 
+		<textarea name="msg" rows="5" cols="10"><%=chat.msg%></textarea>
+		<br>
+	<br>
+		<button>Submit!!</button>
+	</form>
+</body>
+</html>
